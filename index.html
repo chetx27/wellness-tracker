@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloomWell - Wellness Refined</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Lora:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>BloomWell</h1>
+            <p>Refined wellness for the discerning individual</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-tabs">
+            <button class="nav-tab active" data-tab="wellness">Wellness</button>
+            <button class="nav-tab" data-tab="period">Cycle Tracking</button>
+            <button class="nav-tab" data-tab="study">Goals</button>
+            <button class="nav-tab" data-tab="chat">Assistant</button>
+            <button class="nav-tab" data-tab="insights">Insights</button>
+        </nav>
+
+        <!-- Wellness Tab -->
+        <div class="tab-content active" id="wellness">
+            <div class="dashboard">
+                <!-- Daily Habits -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Daily Rituals</h3>
+                        <span class="card-subtitle">Cultivate excellence</span>
+                    </div>
+                    
+                    <div class="habit-list">
+                        <div class="habit-item">
+                            <div class="habit-content">
+                                <div class="habit-icon water"></div>
+                                <div class="habit-details">
+                                    <h4>Hydration</h4>
+                                    <span class="habit-streak">12 day streak</span>
+                                </div>
+                            </div>
+                            <div class="habit-progress">
+                                <div class="progress-dots">
+                                    <div class="progress-dot completed"></div>
+                                    <div class="progress-dot completed"></div>
+                                    <div class="progress-dot completed"></div>
+                                    <div class="progress-dot completed"></div>
+                                    <div class="progress-dot completed"></div>
+                                    <div class="progress-dot"></div>
+                                    <div class="progress-dot"></div>
+                                    <div class="progress-dot"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="habit-item">
+                            <div class="habit-content">
+                                <div class="habit-icon meditation"></div>
+                                <div class="habit-details">
+                                    <h4>Mindfulness</h4>
+                                    <span class="habit-streak">8 day streak</span>
+                                </div>
+                            </div>
+                            <div class="habit-progress">
+                                <div class="progress-dots">
+                                    <div class="progress-dot completed"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="habit-item">
+                            <div class="habit-content">
+                                <div class="habit-icon movement"></div>
+                                <div class="habit-details">
+                                    <h4>Movement</h4>
+                                    <span class="habit-streak">15 day streak</span>
+                                </div>
+                            </div>
+                            <div class="habit-progress">
+                                <div class="progress-dots">
+                                    <div class="progress-dot"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="habit-item">
+                            <div class="habit-content">
+                                <div class="habit-icon rest"></div>
+                                <div class="habit-details">
+                                    <h4>Rest</h4>
+                                    <span class="habit-streak">3 day streak</span>
+                                </div>
+                            </div>
+                            <div class="habit-progress">
+                                <div class="progress-dots">
+                                    <div class="progress-dot completed"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="addNewHabit()">Add Ritual</button>
+                </div>
+
+                <!-- Mood & Energy -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Daily Reflection</h3>
+                        <span class="card-subtitle">How do you feel today?</span>
+                    </div>
+                    
+                    <div class="mood-selector">
+                        <button class="mood-btn" data-mood="1">
+                            <div class="mood-face sad"></div>
+                            <span>Challenging</span>
+                        </button>
+                        <button class="mood-btn" data-mood="2">
+                            <div class="mood-face low"></div>
+                            <span>Low</span>
+                        </button>
+                        <button class="mood-btn" data-mood="3">
+                            <div class="mood-face neutral"></div>
+                            <span>Neutral</span>
+                        </button>
+                        <button class="mood-btn" data-mood="4">
+                            <div class="mood-face good"></div>
+                            <span>Good</span>
+                        </button>
+                        <button class="mood-btn selected" data-mood="5">
+                            <div class="mood-face excellent"></div>
+                            <span>Excellent</span>
+                        </button>
+                    </div>
+
+                    <div class="energy-meter">
+                        <label>Energy Level</label>
+                        <div class="meter-container">
+                            <div class="meter-track">
+                                <div class="meter-fill" style="width: 75%"></div>
+                            </div>
+                            <span class="meter-value">75%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weekly Overview -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Weekly Overview</h3>
+                        <span class="card-subtitle">Your progress at a glance</span>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">87%</span>
+                            <span class="stat-label">Completion</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Streak Days</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4.2</span>
+                            <span class="stat-label">Avg Mood</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">28</span>
+                            <span class="stat-label">Goals Met</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Period Tab -->
+        <div class="tab-content" id="period">
+            <div class="dashboard">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Cycle Tracking</h3>
+                        <span class="card-subtitle">September 2025</span>
+                    </div>
+                    
+                    <div class="calendar">
+                        <div class="calendar-header">
+                            <span>Sun</span>
+                            <span>Mon</span>
+                            <span>Tue</span>
+                            <span>Wed</span>
+                            <span>Thu</span>
+                            <span>Fri</span>
+                            <span>Sat</span>
+                        </div>
+                        <div class="calendar-grid">
+                            <div class="calendar-day">1</div>
+                            <div class="calendar-day today">2</div>
+                            <div class="calendar-day">3</div>
+                            <div class="calendar-day">4</div>
+                            <div class="calendar-day">5</div>
+                            <div class="calendar-day">6</div>
+                            <div class="calendar-day">7</div>
+                            <div class="calendar-day">8</div>
+                            <div class="calendar-day">9</div>
+                            <div class="calendar-day">10</div>
+                            <div class="calendar-day fertile">11</div>
+                            <div class="calendar-day fertile">12</div>
+                            <div class="calendar-day ovulation">13</div>
+                            <div class="calendar-day fertile">14</div>
+                            <div class="calendar-day fertile">15</div>
+                            <div class="calendar-day">16</div>
+                            <div class="calendar-day">17</div>
+                            <div class="calendar-day">18</div>
+                            <div class="calendar-day">19</div>
+                            <div class="calendar-day">20</div>
+                            <div class="calendar-day">21</div>
+                            <div class="calendar-day">22</div>
+                            <div class="calendar-day">23</div>
+                            <div class="calendar-day">24</div>
+                            <div class="calendar-day">25</div>
+                            <div class="calendar-day period">26</div>
+                            <div class="calendar-day period">27</div>
+                            <div class="calendar-day period">28</div>
+                            <div class="calendar-day period">29</div>
+                            <div class="calendar-day">30</div>
+                        </div>
+                    </div>
+
+                    <div class="cycle-stats">
+                        <div class="cycle-stat">
+                            <span class="stat-number">28</span>
+                            <span class="stat-label">Cycle Length</span>
+                        </div>
+                        <div class="cycle-stat">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Period Length</span>
+                        </div>
+                        <div class="cycle-stat">
+                            <span class="stat-number">11</span>
+                            <span class="stat-label">Days Until</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Study Goals Tab -->
+        <div class="tab-content" id="study">
+            <div class="dashboard">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Study Sessions</h3>
+                        <span class="card-subtitle">Focus & achieve</span>
+                    </div>
+                    
+                    <div class="study-sessions">
+                        <div class="session-item">
+                            <div class="session-info">
+                                <div class="session-icon math"></div>
+                                <div class="session-details">
+                                    <h4>Mathematics</h4>
+                                    <span class="session-progress">Chapter 5 - Derivatives</span>
+                                </div>
+                            </div>
+                            <div class="session-timer">
+                                <span class="timer-display">25:00</span>
+                                <button class="timer-btn play" onclick="startTimer(this)">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="session-item">
+                            <div class="session-info">
+                                <div class="session-icon science"></div>
+                                <div class="session-details">
+                                    <h4>Physics</h4>
+                                    <span class="session-progress">Quantum Mechanics</span>
+                                </div>
+                            </div>
+                            <div class="session-timer">
+                                <span class="timer-display">45:00</span>
+                                <button class="timer-btn play" onclick="startTimer(this)">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="session-item">
+                            <div class="session-info">
+                                <div class="session-icon language"></div>
+                                <div class="session-details">
+                                    <h4>Literature</h4>
+                                    <span class="session-progress">Essay Writing</span>
+                                </div>
+                            </div>
+                            <div class="session-timer">
+                                <span class="timer-display">30:00</span>
+                                <button class="timer-btn play" onclick="startTimer(this)">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-secondary">Add Subject</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Tab -->
+        <div class="tab-content" id="chat">
+            <div class="dashboard">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Wellness Assistant</h3>
+                        <span class="card-subtitle">Your personal guide</span>
+                    </div>
+                    
+                    <div class="chat-container">
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="chat-message assistant">
+                                <div class="message-avatar assistant-avatar"></div>
+                                <div class="message-bubble">
+                                    <p>Good afternoon. How may I assist you with your wellness journey today?</p>
+                                </div>
+                            </div>
+                            
+                            <div class="chat-message user">
+                                <div class="message-bubble">
+                                    <p>I'm feeling a bit overwhelmed with my study schedule.</p>
+                                </div>
+                                <div class="message-avatar user-avatar"></div>
+                            </div>
+                            
+                            <div class="chat-message assistant">
+                                <div class="message-avatar assistant-avatar"></div>
+                                <div class="message-bubble">
+                                    <p>I understand. Consider implementing the Pomodoro technique - 25 minutes of focused study followed by a 5-minute break. This can help manage overwhelm while maintaining productivity.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-input-container">
+                            <input type="text" class="chat-input" placeholder="Ask me anything..." id="chatInput">
+                            <button class="chat-send" onclick="sendMessage()">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Insights Tab -->
+        <div class="tab-content" id="insights">
+            <div class="dashboard">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Personal Insights</h3>
+                        <span class="card-subtitle">Data-driven wellness</span>
+                    </div>
+                    
+                    <div class="insights-content">
+                        <div class="insight-item">
+                            <h4>Weekly Trends</h4>
+                            <p>Your mood has improved by 15% this week, correlating with consistent morning meditation practice.</p>
+                        </div>
+                        
+                        <div class="insight-item">
+                            <h4>Sleep Pattern</h4>
+                            <p>Optimal sleep duration appears to be 7.5 hours based on your energy levels and productivity.</p>
+                        </div>
+                        
+                        <div class="insight-item">
+                            <h4>Study Performance</h4>
+                            <p>Mathematics sessions are 20% more effective in the morning hours between 9-11 AM.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
